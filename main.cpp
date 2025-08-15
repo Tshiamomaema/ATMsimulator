@@ -1,18 +1,38 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cstdlib> 
+#include <ctime>  
 using namespace std;
 
-void createAccount(string userName, string userSurname){
+void createAccount(string &userName, string &userSurname, int &pin, int &accountNumber){
+    int placeHolder;
+
     cout << "Lets create an account for you ATSA" << endl;
     cout << "Please enter your name:" << endl;
     cin >> userName;
 
-   // cout << "Please enter your surname:\n" << endl;
-   // getline(cin, userSurname);
+    cout << "Please enter your surname:" << endl;
+    cin >> userSurname;
 
+    cout << "Create a 4 digit pin" << endl;
+    cin >> pin;
 
-    cout << "Your name is " << userName << " and your surname is " << userSurname << endl;
+    srand(time(0));
+    placeHolder = rand() % 10000000 + 100000000;
+    accountNumber = placeHolder;
+    
+
+    
+
+}
+
+void registeringUser(){
+
+    ofstream outFile("userinfo.txt", ios::app);
+    if(outFile.is_open()){
+
+    }
 
 }
 
@@ -37,7 +57,8 @@ int main() {
         
     }
     else if(response == 2){
-        createAccount(userName, userSurname);
+        createAccount(userName, userSurname, pin, accountNumber);
+        registeringUser();
         break;
 
     }
