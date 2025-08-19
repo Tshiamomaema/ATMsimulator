@@ -22,8 +22,10 @@ void createAccount(string &userName, string &userSurname, int &pin, int &account
     placeHolder = rand() % 10000000 + 100000000;
     accountNumber = placeHolder;
     
+    cout << "Dear" << userName << " " << userSurname << "you have sucessfully registered an account" << endl;
+    cout << "Your account number is: " << accountNumber << endl;
+    cout << "Your pin is: " << pin << endl;
 
-    
 
 }
 
