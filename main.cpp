@@ -29,10 +29,13 @@ void createAccount(string &userName, string &userSurname, int &pin, int &account
 
 }
 
-void registeringUser(){
+void registeringUser(string &userName, string &userSurname, int &pin, int &accountNumber){
 
     ofstream outFile("userinfo.txt", ios::app);
     if(outFile.is_open()){
+
+        outFile << userName << " " << userSurname << " " << pin << " " << accountNumber << endl;
+        outFile.close();
 
     }
 
@@ -60,7 +63,7 @@ int main() {
     }
     else if(response == 2){
         createAccount(userName, userSurname, pin, accountNumber);
-        registeringUser();
+        registeringUser(userName, userSurname, pin, accountNumber);
         break;
 
     }
